@@ -11,6 +11,12 @@ composer require ahmed-aliraqi/laravel-media-uploader
 ```bash
 php artisan uploader:install
 ```
+> You should run `migrate` artisan command to create `temporary_files` table.
+
+```bash
+php artisan migrate
+```
+
 > Use `HasUploader` trait in your model:
 
 ```php
