@@ -2,6 +2,12 @@
 
 > This package used to upload files using laravel-media-library before saving model.
 
+> In this package all uploaded media will be processed.
+* All videos will converted to `mp4`.
+* All audios will converted to `mp3`.
+* All images `width` & `height` & `ratio` will be saved as custom property. 
+* All videos & audios `duration` will be saved as custom property. 
+
 #### Installation
 ```bash
 composer require ahmed-aliraqi/laravel-media-uploader
@@ -99,4 +105,10 @@ Vue.use(FileUploader);
 ```
 ```blade
 {{ BsForm::image('avatar')->collection('avatars') }}
+```
+
+> Note: do not forget to add Cron job in your server to remove the expired temporary media.
+
+```
+* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
 ```
