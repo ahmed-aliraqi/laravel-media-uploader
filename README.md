@@ -24,6 +24,7 @@ php artisan uploader:install
 ```bash
 php artisan migrate
 ```
+> Note: If you are using [laravel-media-library](https://github.com/spatie/laravel-medialibrary) for the first time, be sure to create the package `media` table into your database.
 
 > Use `HasUploader` trait in your model:
 
@@ -59,7 +60,28 @@ class BlogController extends Controller
 }
 ``` 
 
-> Now you should install the uploader vue component using `npm`
+#### Front End Basic Usage
+```blade
+<div id="app">
+    <file-uploader
+            :max="1"
+            collection="avatars"
+            :tokens="{{ json_encode(old('media', [])) }}"
+            label="Upload Avatar"
+            notes="Supported types: jpeg, png,jpg,gif"
+            accept="image/jpeg,image/png,image/jpg,image/gif"
+    ></file-uploader>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/laravel-file-uploader@^1.0/dist/file-uploader.min.js"></script>
+<script>
+  new Vue({
+    el: '#app'
+  })
+</script>
+```
+###### Or Install Component Via NPM
 
 ```bash
 npm i laravel-file-uploader --save-dev
