@@ -122,16 +122,16 @@ Vue.use(FileUploader);
     * body: 
         * files[]: multipart form data
     * response:
-        ![upload response](https://i.imgur.com/dvPX9Wa.png)
+        * ![upload response](https://i.imgur.com/dvPX9Wa.png)
 * Display Recently Uploaded Files
     * endpoint: /api/uploader/media
     * method: GET
     * params:
         * tokens[]: temporary token
     * response:
-        ![response](https://i.imgur.com/0xaaDPK.png)
+        * ![response](https://i.imgur.com/0xaaDPK.png)
 * Delete Files
     * endpoint: /api/uploader/media/{id}
     * method: DELETE
     * response:
-        ![response](https://i.imgur.com/dghxe47.png)
+        * ![response](https://i.imgur.com/dghxe47.png)
