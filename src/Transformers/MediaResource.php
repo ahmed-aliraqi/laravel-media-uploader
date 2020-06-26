@@ -2,10 +2,8 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Transformers;
 
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/** @mixin \App\Media */
 class MediaResource extends JsonResource
 {
     /**
@@ -35,7 +33,7 @@ class MediaResource extends JsonResource
             ),
             'links' => [
                 'delete' => [
-                    'href' => route('uploader.media.destroy', $this),
+                    'href' => url('api/uploader/media/'. $this->getRouteKey()),
                     'method' => 'DELETE',
                 ],
             ],

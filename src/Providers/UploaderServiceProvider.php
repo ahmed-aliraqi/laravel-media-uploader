@@ -2,11 +2,13 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Providers;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;
 use Elnooronline\LaravelBootstrapForms\Facades\BsForm;
 use AhmedAliraqi\LaravelMediaUploader\Support\FFmpegDriver;
 use AhmedAliraqi\LaravelMediaUploader\Console\InstallCommand;
+use AhmedAliraqi\LaravelMediaUploader\Jobs\PerformConversions;
 use AhmedAliraqi\LaravelMediaUploader\Console\TemporaryClearCommand;
 use AhmedAliraqi\LaravelMediaUploader\Forms\Components\ImageComponent;
 
@@ -42,6 +44,10 @@ class UploaderServiceProvider extends ServiceProvider
         });
 
         BsForm::registerComponent('image', ImageComponent::class);
+
+        Config::set([
+            'medialibrary.jobs.perform_conversions' => PerformConversions::class,
+        ]);
     }
 
     /**
