@@ -2,9 +2,9 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Entities\Concerns;
 
-use Illuminate\Support\Facades\Artisan;
 use AhmedAliraqi\LaravelMediaUploader\Entities\TemporaryFile;
 use AhmedAliraqi\LaravelMediaUploader\Transformers\MediaResource;
+use Illuminate\Support\Facades\Artisan;
 
 trait HasUploader
 {

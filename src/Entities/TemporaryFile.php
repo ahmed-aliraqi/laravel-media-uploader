@@ -2,10 +2,10 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Entities;
 
-use Spatie\MediaLibrary\Models\Media;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 
 class TemporaryFile extends Model implements HasMedia
 {

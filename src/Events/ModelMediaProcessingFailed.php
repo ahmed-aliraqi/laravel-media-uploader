@@ -2,9 +2,9 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Events;
 
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class ModelMediaProcessingFailed
 {

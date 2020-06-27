@@ -2,8 +2,8 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Console;
 
-use Illuminate\Console\Command;
 use AhmedAliraqi\LaravelMediaUploader\Entities\TemporaryFile;
+use Illuminate\Console\Command;
 
 class TemporaryClearCommand extends Command
 {
