@@ -4,9 +4,6 @@
 	<a href="https://travis-ci.org/ahmed-aliraqi/laravel-media-uploader">
 		<img src="https://travis-ci.org/ahmed-aliraqi/laravel-media-uploader.svg?branch=master" alt="Travis Build Status">
 	</a>
-	<a href="https://circleci.com/gh/ahmed-aliraqi/laravel-media-uploader">
-		<img src="https://circleci.com/gh/ahmed-aliraqi/laravel-media-uploader.png?style=shield" alt="Circleci Build Status">
-	</a>
 	<a href="https://packagist.org/packages/ahmed-aliraqi/laravel-media-uploader">
 		<img src="https://poser.pugx.org/ahmed-aliraqi/laravel-media-uploader/d/total.svg" alt="Total Downloads">
 	</a>
