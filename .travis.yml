@@ -6,6 +6,9 @@ php:
   - 7.2
   - 7.3
 
+before_script:
+  - pecl install imagick
+
 before_install:
   - sudo apt-get update
   - travis_retry composer self-update
