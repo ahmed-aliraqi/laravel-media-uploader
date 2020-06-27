@@ -11,13 +11,23 @@ trait HasUploader
     /**
      * Assign all uploaded temporary files to the model.
      *
+     * @param array $tokens
+     * @param string|null $collection
      * @return void
      */
-    public function addAllMediaFromTokens()
+    public function addAllMediaFromTokens($tokens = [], $collection = null)
     {
-        $tokens = is_array(request('media')) ? request('media') : [];
+        if (empty($tokens)) {
+            $tokens = is_array(request('media')) ? request('media') : [];
+        }
 
-        TemporaryFile::whereIn('token', $tokens)
+        $query = TemporaryFile::query();
+
+        if ($collection) {
+            $query->where('collection', $collection);
+        }
+
+        $query->whereIn('token', $tokens)
             ->each(function (TemporaryFile $file) {
                 foreach ($file->getMedia($file->collection) as $media) {
                     $media->forceFill([

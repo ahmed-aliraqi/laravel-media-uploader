@@ -16,9 +16,18 @@
         "php-ffmpeg/php-ffmpeg": "^0.16.0",
         "elnooronline/laravel-bootstrap-forms": "^3.0|^4.0"
     },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "mockery/mockery": "^1.2"
+    },
     "autoload": {
         "psr-4": {
             "AhmedAliraqi\\LaravelMediaUploader\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AhmedAliraqi\\LaravelMediaUploader\\Tests\\": "tests/"
         }
     },
     "extra": {

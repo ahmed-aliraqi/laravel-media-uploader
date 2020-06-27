@@ -1,5 +1,22 @@
 # Laravel Media Uploader
-
+<p align="center">
+	<a href="https://github.styleci.io/repos/179407016"><img src="https://github.styleci.io/repos/179407016/shield?branch=master" alt="StyleCI"></a>
+	<a href="https://travis-ci.org/ahmed-aliraqi/laravel-media-uploader">
+		<img src="https://travis-ci.org/ahmed-aliraqi/laravel-media-uploader.svg?branch=master" alt="Travis Build Status">
+	</a>
+	<a href="https://circleci.com/gh/ahmed-aliraqi/laravel-media-uploader">
+		<img src="https://circleci.com/gh/ahmed-aliraqi/laravel-media-uploader.png?style=shield" alt="Circleci Build Status">
+	</a>
+	<a href="https://packagist.org/packages/ahmed-aliraqi/laravel-media-uploader">
+		<img src="https://poser.pugx.org/ahmed-aliraqi/laravel-media-uploader/d/total.svg" alt="Total Downloads">
+	</a>
+	<a href="https://packagist.org/packages/ahmed-aliraqi/laravel-media-uploader">
+		<img src="https://poser.pugx.org/ahmed-aliraqi/laravel-media-uploader/v/stable.svg" alt="Latest Stable Version">
+	</a>
+	<a href="https://packagist.org/packages/ahmed-aliraqi/laravel-media-uploader">
+		<img src="https://poser.pugx.org/ahmed-aliraqi/laravel-media-uploader/license.svg" alt="License">
+	</a>
+</p>
 > This package used to upload files using laravel-media-library before saving model.
 
 ![Uploader](https://i.imgur.com/zspIP0f.gif)
