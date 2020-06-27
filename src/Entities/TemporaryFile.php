@@ -21,7 +21,6 @@ class TemporaryFile extends Model implements HasMedia
         'collection',
     ];
 
-
     /**
      * Register the conversions for the specified model.
      *

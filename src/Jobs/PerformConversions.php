@@ -10,9 +10,9 @@ use Intervention\Image\Facades\Image;
 use FFMpeg\Exception\RuntimeException;
 use Illuminate\Support\Facades\Config;
 use AhmedAliraqi\LaravelMediaUploader\Events\ModelMediaProcessingFailed;
-use AhmedAliraqi\LaravelMediaUploader\Events\ModelMediaProcessingCompleted;
 use Spatie\MediaLibrary\ImageGenerators\FileTypes\Image as ImageGenerator;
 use Spatie\MediaLibrary\Jobs\PerformConversions as BasePerformConversions;
+use AhmedAliraqi\LaravelMediaUploader\Events\ModelMediaProcessingCompleted;
 
 class PerformConversions extends BasePerformConversions
 {

@@ -4,8 +4,8 @@ namespace AhmedAliraqi\LaravelMediaUploader\Rules;
 
 use FFMpeg\FFMpeg;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Config;
 use FFMpeg\Exception\RuntimeException;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Contracts\Validation\Rule;
 use Spatie\MediaLibrary\ImageGenerators\FileTypes\Image;
 
@@ -76,7 +76,6 @@ class MediaRule implements Rule
         } elseif (in_array($value->getMimeType(), $this->documentsMimeTypes())) {
             $type = 'document';
         } else {
-
             $type = strtolower(class_basename(get_class(
                 app('ffmpeg-driver')->open($fileFullPath)
             )));

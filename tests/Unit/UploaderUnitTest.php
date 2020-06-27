@@ -61,6 +61,5 @@ class UploaderUnitTest extends TestCase
 
         $this->assertEquals($media->model_type, Blog::class);
         $this->assertEquals($media->model_id, $blog->id);
-
     }
 }

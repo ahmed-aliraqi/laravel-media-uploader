@@ -2,8 +2,8 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Http\Requests;
 
-use AhmedAliraqi\LaravelMediaUploader\Rules\MediaRule;
 use Illuminate\Foundation\Http\FormRequest;
+use AhmedAliraqi\LaravelMediaUploader\Rules\MediaRule;
 
 class MediaRequest extends FormRequest
 {
