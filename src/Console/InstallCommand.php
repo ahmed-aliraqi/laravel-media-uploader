@@ -3,7 +3,6 @@
 namespace AhmedAliraqi\LaravelMediaUploader\Console;
 
 use Illuminate\Console\Command;
-use AhmedAliraqi\LaravelMediaUploader\Entities\TemporaryFile;
 
 class InstallCommand extends Command
 {
