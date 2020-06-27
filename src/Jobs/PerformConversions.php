@@ -2,17 +2,17 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Jobs;
 
-use FFMpeg\Media\Audio;
-use FFMpeg\Media\Video;
+use AhmedAliraqi\LaravelMediaUploader\Events\ModelMediaProcessingCompleted;
+use AhmedAliraqi\LaravelMediaUploader\Events\ModelMediaProcessingFailed;
+use FFMpeg\Exception\RuntimeException;
 use FFMpeg\Format\Audio\Mp3;
 use FFMpeg\Format\Video\X264;
-use Intervention\Image\Facades\Image;
-use FFMpeg\Exception\RuntimeException;
+use FFMpeg\Media\Audio;
+use FFMpeg\Media\Video;
 use Illuminate\Support\Facades\Config;
-use AhmedAliraqi\LaravelMediaUploader\Events\ModelMediaProcessingFailed;
+use Intervention\Image\Facades\Image;
 use Spatie\MediaLibrary\ImageGenerators\FileTypes\Image as ImageGenerator;
 use Spatie\MediaLibrary\Jobs\PerformConversions as BasePerformConversions;
-use AhmedAliraqi\LaravelMediaUploader\Events\ModelMediaProcessingCompleted;
 
 class PerformConversions extends BasePerformConversions
 {
@@ -104,8 +104,6 @@ class PerformConversions extends BasePerformConversions
             ->setCustomProperty('height', $image->height())
             ->setCustomProperty('ratio', (string) round($image->width() / $image->height(), 3))
             ->save();
-
-        return;
     }
 
     /**
@@ -116,8 +114,6 @@ class PerformConversions extends BasePerformConversions
     protected function processDocument()
     {
         $this->media->setCustomProperty('type', 'document')->save();
-
-        return;
     }
 
     /**
@@ -219,8 +215,6 @@ class PerformConversions extends BasePerformConversions
         // New Converted Media Has Been Added
 
         event(new ModelMediaProcessingCompleted($model));
-
-        return;
     }
 
     /**

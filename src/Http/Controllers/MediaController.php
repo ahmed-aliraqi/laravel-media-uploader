@@ -2,13 +2,13 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Http\Controllers;
 
-use Illuminate\Support\Str;
-use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Database\Eloquent\Builder;
 use AhmedAliraqi\LaravelMediaUploader\Entities\TemporaryFile;
 use AhmedAliraqi\LaravelMediaUploader\Http\Requests\MediaRequest;
 use AhmedAliraqi\LaravelMediaUploader\Transformers\MediaResource;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Str;
 
 class MediaController extends Controller
 {

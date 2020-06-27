@@ -33,7 +33,7 @@ class MediaResource extends JsonResource
             ),
             'links' => [
                 'delete' => [
-                    'href' => url('api/uploader/media/'. $this->getRouteKey()),
+                    'href' => url('api/uploader/media/'.$this->getRouteKey()),
                     'method' => 'DELETE',
                 ],
             ],

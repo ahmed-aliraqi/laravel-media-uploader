@@ -2,10 +2,10 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Tests\Unit;
 
+use AhmedAliraqi\LaravelMediaUploader\Tests\Models\Blog;
+use AhmedAliraqi\LaravelMediaUploader\Tests\TestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use AhmedAliraqi\LaravelMediaUploader\Tests\TestCase;
-use AhmedAliraqi\LaravelMediaUploader\Tests\Models\Blog;
 
 class UploaderFeatureTest extends TestCase
 {

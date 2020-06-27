@@ -2,11 +2,10 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Rules;
 
-use FFMpeg\FFMpeg;
-use Illuminate\Http\UploadedFile;
 use FFMpeg\Exception\RuntimeException;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Config;
 use Spatie\MediaLibrary\ImageGenerators\FileTypes\Image;
 
 class MediaRule implements Rule

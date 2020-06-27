@@ -2,12 +2,12 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Tests;
 
-use Illuminate\Console\Application;
-use Spatie\MediaLibrary\Commands\RegenerateCommand;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Elnooronline\LaravelLocales\Providers\LocalesServiceProvider;
 use AhmedAliraqi\LaravelMediaUploader\Providers\UploaderServiceProvider;
 use Elnooronline\LaravelBootstrapForms\Providers\BootstrapFormsServiceProvider;
+use Elnooronline\LaravelLocales\Providers\LocalesServiceProvider;
+use Illuminate\Console\Application;
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
+use Spatie\MediaLibrary\Commands\RegenerateCommand;
 
 class TestCase extends OrchestraTestCase
 {

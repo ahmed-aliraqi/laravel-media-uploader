@@ -2,12 +2,12 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Tests\Unit;
 
+use AhmedAliraqi\LaravelMediaUploader\Entities\TemporaryFile;
+use AhmedAliraqi\LaravelMediaUploader\Tests\Models\Blog;
+use AhmedAliraqi\LaravelMediaUploader\Tests\TestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
-use AhmedAliraqi\LaravelMediaUploader\Tests\TestCase;
-use AhmedAliraqi\LaravelMediaUploader\Tests\Models\Blog;
-use AhmedAliraqi\LaravelMediaUploader\Entities\TemporaryFile;
 
 class UploaderUnitTest extends TestCase
 {
