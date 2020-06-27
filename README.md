@@ -1,6 +1,6 @@
 # Laravel Media Uploader
 <p align="center">
-	<a href="https://github.styleci.io/repos/179407016"><img src="https://github.styleci.io/repos/179407016/shield?branch=master" alt="StyleCI"></a>
+	<a href="https://github.styleci.io/repos/275045511"><img src="https://github.styleci.io/repos/179407016/shield?branch=master" alt="StyleCI"></a>
 	<a href="https://travis-ci.org/ahmed-aliraqi/laravel-media-uploader">
 		<img src="https://travis-ci.org/ahmed-aliraqi/laravel-media-uploader.svg?branch=master" alt="Travis Build Status">
 	</a>
@@ -73,6 +73,16 @@ class BlogController extends Controller
         }
 }
 ``` 
+> If you do not add any arguments in `addAllMediaFromTokens()` method will add all tokens in `request('media')` with any collection.
+>
+>If you want to save specific collection name add it to the second argument.
+```php
+// specified collection name
+$blog->addAllMediaFromTokens([], 'pictures');
+
+// specified tokens
+$blog->addAllMediaFromTokens($request->input('tokens', []), 'pictures');
+```
 
 #### Front End Basic Usage
 ```blade
