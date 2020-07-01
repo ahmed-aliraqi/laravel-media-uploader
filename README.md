@@ -28,17 +28,21 @@
 ```bash
 composer require ahmed-aliraqi/laravel-media-uploader
 ```
-> after install the package you should publish the uploader icons using the following command:
+> The package will automatically register a service provider.
+  
+> You need to publish and run the migration:
 
 ```bash
-php artisan uploader:install
-```
-> You should run `migrate` artisan command to create `temporary_files` table.
+php artisan vendor:publish --provider="AhmedAliraqi\LaravelMediaUploader\Providers\UploaderServiceProvider" --tag="migrations"
 
-```bash
 php artisan migrate
 ```
-> Note: If you are using [laravel-media-library](https://github.com/spatie/laravel-medialibrary) for the first time, be sure to create the package `media` table into your database.
+> Publish [laravel-media-library](https://github.com/spatie/laravel-medialibrary) migrations:
+
+```bash
+php artisan vendor:publish --provider="Spatie\MediaLibrary\MediaLibraryServiceProvider" --tag="migrations"
+php artisan migrate
+```
 
 > Use `HasUploader` trait in your model:
 

@@ -25,13 +25,9 @@ class UploaderServiceProvider extends ServiceProvider
 
         $this->registerViews();
 
-        $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');
-
         $this->publishes([
-            __DIR__.'/../Resources/assets/images/attach.png' => public_path('/images/attach.png'),
-            __DIR__.'/../Resources/assets/images/loading-100.gif' => public_path('/images/loading-100.gif'),
-            __DIR__.'/../Resources/assets/images/plus-circle-solid.svg' => public_path('/images/plus-circle-solid.svg'),
-        ], 'uploader:icons');
+            __DIR__.'/../Database/Migrations' => database_path('/migrations'),
+        ], 'migrations');
 
         $this->commands([
             TemporaryClearCommand::class,
