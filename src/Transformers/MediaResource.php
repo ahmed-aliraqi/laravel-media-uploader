@@ -17,7 +17,7 @@ class MediaResource extends JsonResource
         return [
             'id' => $this->id,
             'url' => $this->getFullUrl(),
-            'preview' => $this->getPreviewUrl(),
+            'preview' => $this->when($this->getPreviewUrl(), $this->getPreviewUrl()),
             'name' => $this->name,
             'file_name' => $this->file_name,
             'type' => $this->getType(),
@@ -99,15 +99,13 @@ class MediaResource extends JsonResource
     /**
      * Get the preview url.
      *
-     * @return mixed|string
+     * @return string|void
      */
     public function getPreviewUrl()
     {
         if ($this->getType() == 'image') {
             return $this->getFullUrl();
         }
-
-        return asset('/images/attach.png');
     }
 
     /**
