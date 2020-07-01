@@ -31,7 +31,6 @@ class UploaderServiceProvider extends ServiceProvider
 
         $this->commands([
             TemporaryClearCommand::class,
-            InstallCommand::class,
         ]);
 
         $this->app->booted(function () {
