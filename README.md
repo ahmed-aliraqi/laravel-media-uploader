@@ -44,6 +44,35 @@ php artisan vendor:publish --provider="Spatie\MediaLibrary\MediaLibraryServicePr
 php artisan migrate
 ```
 
+> If you want to customize `attachments` validation rules, you should publish the config file:
+
+```bash
+php artisan vendor:publish --provider="AhmedAliraqi\LaravelMediaUploader\Providers\UploaderServiceProvider" --tag="config"
+```
+
+> This is the default content of the config file:
+
+```php
+<?php
+
+return [
+    'documents_mime_types' => [
+        'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // .doc & .docx
+        'application/vnd.ms-powerpoint',
+        'application/vnd.openxmlformats-officedocument.presentationml.presentation', // .ppt & .pptx
+        'application/vnd.ms-excel',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xls & .xlsx
+        'text/plain',
+        'application/pdf',
+        'application/zip',
+        'application/x-rar',
+        'application/x-rar-compressed',
+        'application/octet-stream',
+    ],
+];
+```
+
 > Use `HasUploader` trait in your model:
 
 ```php
