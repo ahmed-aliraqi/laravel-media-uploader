@@ -2,7 +2,6 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Providers;
 
-use AhmedAliraqi\LaravelMediaUploader\Console\InstallCommand;
 use AhmedAliraqi\LaravelMediaUploader\Console\TemporaryClearCommand;
 use AhmedAliraqi\LaravelMediaUploader\Forms\Components\ImageComponent;
 use AhmedAliraqi\LaravelMediaUploader\Jobs\PerformConversions;
