@@ -26,7 +26,6 @@ class UploaderFeatureTest extends TestCase
                 [
                     'id',
                     'url',
-                    'preview',
                     'name',
                     'file_name',
                     'type',
