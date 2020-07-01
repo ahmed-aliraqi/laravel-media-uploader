@@ -14,6 +14,7 @@
 		<img src="https://poser.pugx.org/ahmed-aliraqi/laravel-media-uploader/license.svg" alt="License">
 	</a>
 </p>
+
 > This package used to upload files using laravel-media-library before saving model.
 
 ![Uploader](https://i.imgur.com/zspIP0f.gif)
