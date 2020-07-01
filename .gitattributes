@@ -10,3 +10,6 @@
 /.styleci.yml       export-ignore
 /tests              export-ignore
 /.editorconfig      export-ignore
+/changelog.md       export-ignore
+/phpunit.xml        export-ignore
+/README.md          export-ignore
