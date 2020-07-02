@@ -194,6 +194,11 @@ Vue.use(FileUploader);
 ```
 * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
 ```
+> **Note:**
+> Do not forget to store the `csrf` token in an HTML `meta` tag:
+```blade
+<meta name="csrf-token" content="{{ csrf_token() }}">
+```
 
 #### API
 * Upload Files
