@@ -1,6 +1,6 @@
 <?php
 
-namespace AhmedAliraqi\LaravelMediaUploader\Tests\Unit;
+namespace AhmedAliraqi\LaravelMediaUploader\Tests\Feature;
 
 use AhmedAliraqi\LaravelMediaUploader\Tests\Models\Blog;
 use AhmedAliraqi\LaravelMediaUploader\Tests\TestCase;
