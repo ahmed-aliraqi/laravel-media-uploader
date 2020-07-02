@@ -2,8 +2,6 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Jobs;
 
-use AhmedAliraqi\LaravelMediaUploader\Events\ModelMediaProcessingCompleted;
-use AhmedAliraqi\LaravelMediaUploader\Events\ModelMediaProcessingFailed;
 use FFMpeg\Exception\RuntimeException;
 use FFMpeg\Format\Audio\Mp3;
 use FFMpeg\Format\Video\X264;
@@ -212,9 +210,6 @@ class PerformConversions extends BasePerformConversions
 
             $oldMedia->delete();
         }
-        // New Converted Media Has Been Added
-
-        event(new ModelMediaProcessingCompleted($model));
     }
 
     /**
@@ -225,8 +220,6 @@ class PerformConversions extends BasePerformConversions
         $media = $this->media;
 
         $media->setCustomProperty('status', 'failed')->save();
-
-        event(new ModelMediaProcessingFailed($media));
     }
 
     /**
