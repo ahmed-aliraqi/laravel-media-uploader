@@ -144,7 +144,7 @@ $blog->addAllMediaFromTokens($request->input('tokens', []), 'pictures');
 ```bash
 npm i laravel-file-uploader --save-dev
 ``` 
-> Now you should register the component in your `resources/app.js`:
+> Now you should register the component in your `resources/js/app.js`:
 
 ```js
 // app.js
