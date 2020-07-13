@@ -1,4 +1,7 @@
 # Release Notes for Laravel Media Uploader
+### v2.0.1
+* **Fixes**
+    - Register and publish translations [b5b7dd3](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/b5b7dd3efd11a6c0c6aeac82e83003da645a1a09)
 ### v2.0.0
 * **Changes**
     - Remove built in migration and use published instead [8611ac6](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/8611ac6bbb9b8833c8231ae8d03e4cf1cb7d6866).
