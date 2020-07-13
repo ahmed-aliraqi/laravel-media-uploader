@@ -24,6 +24,8 @@ class UploaderServiceProvider extends ServiceProvider
 
         $this->registerViews();
 
+        $this->registerTranslations();
+
         $this->publishes([
             __DIR__.'/../Database/Migrations' => database_path('/migrations'),
         ], 'migrations');
@@ -95,6 +97,10 @@ class UploaderServiceProvider extends ServiceProvider
      */
     public function registerTranslations()
     {
+        $this->publishes([
+            __DIR__.'/../Resources/lang' => resource_path('lang/vendor/uploader'),
+        ], 'uploader:translations');
+
         $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'uploader');
     }
 }

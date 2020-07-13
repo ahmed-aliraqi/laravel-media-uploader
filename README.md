@@ -51,6 +51,12 @@ php artisan migrate
 php artisan vendor:publish --provider="AhmedAliraqi\LaravelMediaUploader\Providers\UploaderServiceProvider" --tag="config"
 ```
 
+> If you want to customize validation translations, you should publish the `lang` files:
+
+```bash
+php artisan vendor:publish --provider="AhmedAliraqi\LaravelMediaUploader\Providers\UploaderServiceProvider" --tag="uploader:translations"
+```
+
 > This is the default content of the config file:
 
 ```php
