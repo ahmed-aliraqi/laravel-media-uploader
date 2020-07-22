@@ -140,7 +140,7 @@ $blog->addAllMediaFromTokens($request->input('tokens', []), 'pictures');
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/laravel-file-uploader/dist/file-uploader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/laravel-file-uploader"></script>
 <script>
   new Vue({
     el: '#app'
