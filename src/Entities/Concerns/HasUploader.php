@@ -2,9 +2,9 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Entities\Concerns;
 
-use Illuminate\Support\Arr;
 use AhmedAliraqi\LaravelMediaUploader\Entities\TemporaryFile;
 use AhmedAliraqi\LaravelMediaUploader\Transformers\MediaResource;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
 
