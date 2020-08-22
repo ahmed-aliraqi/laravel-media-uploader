@@ -13,11 +13,11 @@ trait HasUploader
     /**
      * Assign all uploaded temporary files to the model.
      *
-     * @param array $tokens
+     * @param string|array|null $tokens
      * @param string|null $collection
      * @return void
      */
-    public function addAllMediaFromTokens($tokens = [], $collection = null)
+    public function addAllMediaFromTokens($tokens = null, $collection = null)
     {
         $tokens = Arr::wrap($tokens);
 
