@@ -2,6 +2,7 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Entities\Concerns;
 
+use Illuminate\Support\Arr;
 use AhmedAliraqi\LaravelMediaUploader\Entities\TemporaryFile;
 use AhmedAliraqi\LaravelMediaUploader\Transformers\MediaResource;
 use Illuminate\Support\Facades\Artisan;
@@ -18,8 +19,10 @@ trait HasUploader
      */
     public function addAllMediaFromTokens($tokens = [], $collection = null)
     {
-        if (empty($tokens)) {
-            $tokens = is_array(request('media')) ? request('media') : [];
+        $tokens = Arr::wrap($tokens);
+
+        if (count($tokens) == 0) {
+            $tokens = Arr::wrap(request('media'));
         }
 
         $query = TemporaryFile::query();
