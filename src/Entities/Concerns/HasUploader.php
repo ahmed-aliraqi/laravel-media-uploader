@@ -5,6 +5,7 @@ namespace AhmedAliraqi\LaravelMediaUploader\Entities\Concerns;
 use AhmedAliraqi\LaravelMediaUploader\Entities\TemporaryFile;
 use AhmedAliraqi\LaravelMediaUploader\Transformers\MediaResource;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Config;
 
 trait HasUploader
 {
@@ -35,9 +36,11 @@ trait HasUploader
                         'model_id' => $this->getKey(),
                     ])->save();
 
-                    Artisan::call('medialibrary:regenerate', [
-                        '--ids' => $media->id,
-                    ]);
+                    if (Config::get('laravel-media-uploader.regenerate-after-assigning')) {
+                        Artisan::call('medialibrary:regenerate', [
+                            '--ids' => $media->id,
+                        ]);
+                    }
                 }
 
                 $file->delete();

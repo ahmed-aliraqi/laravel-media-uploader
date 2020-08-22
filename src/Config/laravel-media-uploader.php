@@ -1,6 +1,11 @@
 <?php
 
 return [
+    /*
+     * Regenerate uploaded media after assign to model
+     */
+    'regenerate-after-assigning' => true,
+
     'documents_mime_types' => [
         'application/msword',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // .doc & .docx
