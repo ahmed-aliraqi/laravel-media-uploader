@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-
 class TemporaryFile extends Model implements HasMedia
 {
-
     use InteractsWithMedia;
 
     /**
@@ -48,5 +46,4 @@ class TemporaryFile extends Model implements HasMedia
              ->width(320)
              ->format('png');
     }
-
 }

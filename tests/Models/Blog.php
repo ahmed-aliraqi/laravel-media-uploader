@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model implements HasMedia
 {
-
     use InteractsWithMedia, HasUploader;
 
     /**
@@ -18,5 +17,4 @@ class Blog extends Model implements HasMedia
      * @var string
      */
     protected $table = 'blogs';
-
 }

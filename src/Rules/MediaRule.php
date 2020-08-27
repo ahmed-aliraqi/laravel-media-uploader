@@ -8,7 +8,6 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Config;
 use Spatie\MediaLibrary\Conversions\ImageGenerators\Image;
 
-
 class MediaRule implements Rule
 {
     /**
