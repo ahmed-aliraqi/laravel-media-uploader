@@ -2,14 +2,16 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Entities;
 
+use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+
 
 class TemporaryFile extends Model implements HasMedia
 {
-    use HasMediaTrait;
+
+    use InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
@@ -24,25 +26,27 @@ class TemporaryFile extends Model implements HasMedia
     /**
      * Register the conversions for the specified model.
      *
-     * @param \Spatie\MediaLibrary\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media|null  $media
+     *
      * @throws \Spatie\Image\Exceptions\InvalidManipulation
      */
-    public function registerMediaConversions(Media $media = null)
+    public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-            ->width(70)
-            ->format('png');
+             ->width(70)
+             ->format('png');
 
         $this->addMediaConversion('small')
-            ->width(120)
-            ->format('png');
+             ->width(120)
+             ->format('png');
 
         $this->addMediaConversion('medium')
-            ->width(160)
-            ->format('png');
+             ->width(160)
+             ->format('png');
 
         $this->addMediaConversion('large')
-            ->width(320)
-            ->format('png');
+             ->width(320)
+             ->format('png');
     }
+
 }

@@ -95,13 +95,14 @@ return [
 namespace App;
 
 
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\MediaLibrary\HasMedia;
 use AhmedAliraqi\LaravelMediaUploader\Entities\Concerns\HasUploader;
 
 class Blog extends Model implements HasMedia
 {
-    use HasMediaTrait, HasUploader;
+    use InteractsWithMedia, HasUploader;
     ...
 }
 ```

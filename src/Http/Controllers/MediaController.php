@@ -20,8 +20,8 @@ class MediaController extends Controller
     public function index()
     {
         $modelClass = Config::get(
-            'medialibrary.media_model',
-            \Spatie\MediaLibrary\Models\Media::class
+            'media-library.media_model',
+            \Spatie\MediaLibrary\MediaCollections\Models\Media::class
         );
 
         $tokens = is_array(request('tokens')) ? request('tokens') : [];
@@ -40,11 +40,11 @@ class MediaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \AhmedAliraqi\LaravelMediaUploader\Http\Requests\MediaRequest $request
-     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist
-     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileIsTooBig
-     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist
+     * @param  \AhmedAliraqi\LaravelMediaUploader\Http\Requests\MediaRequest  $request
+     *
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * @throws \Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist
+     * @throws \Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig
      */
     public function store(MediaRequest $request)
     {
@@ -97,8 +97,8 @@ class MediaController extends Controller
     public function destroy($media)
     {
         $modelClass = Config::get(
-            'medialibrary.media_model',
-            \Spatie\MediaLibrary\Models\Media::class
+            'media-library.media_model',
+            \Spatie\MediaLibrary\MediaCollections\Models\Media::class
         );
 
         $media = $modelClass::findOrFail($media);

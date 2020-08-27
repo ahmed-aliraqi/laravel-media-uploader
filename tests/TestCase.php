@@ -2,12 +2,13 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Tests;
 
+use Spatie\MediaLibrary\Conversions\Commands\RegenerateCommand;
 use AhmedAliraqi\LaravelMediaUploader\Providers\UploaderServiceProvider;
 use Elnooronline\LaravelBootstrapForms\Providers\BootstrapFormsServiceProvider;
 use Elnooronline\LaravelLocales\Providers\LocalesServiceProvider;
 use Illuminate\Console\Application;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Spatie\MediaLibrary\Commands\RegenerateCommand;
+
 
 class TestCase extends OrchestraTestCase
 {
@@ -55,7 +56,7 @@ class TestCase extends OrchestraTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('medialibrary', require __DIR__.'/config/medialibrary.php');
+        $app['config']->set('media-library', require __DIR__.'/config/media-library.php');
         $app['config']->set('laravel-media-uploader', require __DIR__.'/config/laravel-media-uploader.php');
         // Setup default database to use sqlite :memory:
         $app['config']->set('database.default', 'testbench');
