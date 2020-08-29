@@ -1,4 +1,7 @@
 # Release Notes for Laravel Media Uploader
+### v3.0.0
+* **Changes**
+    - change vendor name of laravel-bootstrap-forms. [d09599d](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/d09599d07d8e6ca92f393de0dd0a47cc1c934b32)
 ### v2.1.0
 * **Added**
     - Add "regenerate-after-assigning" option in config file [4fb569b](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/4fb569ba99dafd3098698e4aa274c1868d0d9206)
