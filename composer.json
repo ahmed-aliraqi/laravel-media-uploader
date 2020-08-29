@@ -14,7 +14,7 @@
         "spatie/image": "^1.7",
         "spatie/laravel-medialibrary": "^7.19",
         "php-ffmpeg/php-ffmpeg": "^0.16.0",
-        "elnooronline/laravel-bootstrap-forms": "^3.0|^4.0"
+        "laraeast/laravel-bootstrap-forms": "^5.0"
     },
     "require-dev": {
         "orchestra/testbench": "~3.0",
