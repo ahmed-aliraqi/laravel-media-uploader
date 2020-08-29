@@ -25,7 +25,8 @@
 * All images `width` & `height` & `ratio` will be saved as custom property. 
 * All videos & audios `duration` will be saved as custom property. 
 #### Requirements
-> You should be ensured that the [ffmpeg](https://ffmpeg.org) was installed on your server
+- PHP >= 7.4
+- You should be ensured that the [ffmpeg](https://ffmpeg.org) was installed on your server
 
 #### Installation
 ```bash
