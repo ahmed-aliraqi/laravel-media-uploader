@@ -2,7 +2,7 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Forms\Components;
 
-use Elnooronline\LaravelBootstrapForms\Components\BaseComponent;
+use Laraeast\LaravelBootstrapForms\Components\BaseComponent;
 
 class ImageComponent extends BaseComponent
 {

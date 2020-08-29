@@ -6,10 +6,10 @@ use AhmedAliraqi\LaravelMediaUploader\Console\TemporaryClearCommand;
 use AhmedAliraqi\LaravelMediaUploader\Forms\Components\ImageComponent;
 use AhmedAliraqi\LaravelMediaUploader\Jobs\PerformConversions;
 use AhmedAliraqi\LaravelMediaUploader\Support\FFmpegDriver;
-use Elnooronline\LaravelBootstrapForms\Facades\BsForm;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
+use Laraeast\LaravelBootstrapForms\Facades\BsForm;
 
 class UploaderServiceProvider extends ServiceProvider
 {

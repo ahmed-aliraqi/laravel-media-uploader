@@ -3,9 +3,9 @@
 namespace AhmedAliraqi\LaravelMediaUploader\Tests;
 
 use AhmedAliraqi\LaravelMediaUploader\Providers\UploaderServiceProvider;
-use Elnooronline\LaravelBootstrapForms\Providers\BootstrapFormsServiceProvider;
-use Elnooronline\LaravelLocales\Providers\LocalesServiceProvider;
 use Illuminate\Console\Application;
+use Laraeast\LaravelBootstrapForms\Providers\BootstrapFormsServiceProvider;
+use Laraeast\LaravelLocales\Providers\LocalesServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Spatie\MediaLibrary\Conversions\Commands\RegenerateCommand;
 

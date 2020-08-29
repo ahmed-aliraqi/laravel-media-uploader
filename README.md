@@ -191,7 +191,7 @@ Vue.use(FileUploader);
 |tokens| optional - default: `[]`|array|the recently uploaded files tokens, used to display recently uploaded files in validation case|
 
 #### Using with BsForm
-> This uploader support [laravel-bootstrap-forms](https://github.com/Elnooronline/laravel-bootstrap-forms) you can use the `image` custom component instead of vue html tag:
+> This uploader support [laravel-bootstrap-forms](https://github.com/laraeast/laravel-bootstrap-forms) you can use the `image` custom component instead of vue html tag:
 
 ```blade
 {{ BsForm::image('avatar')->collection('avatars')->files($user->getMediaResource('avatars')) }}
