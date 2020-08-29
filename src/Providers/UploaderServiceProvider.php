@@ -42,7 +42,7 @@ class UploaderServiceProvider extends ServiceProvider
         BsForm::registerComponent('image', ImageComponent::class);
 
         Config::set([
-            'medialibrary.jobs.perform_conversions' => PerformConversions::class,
+            'media-library.jobs.perform_conversions' => PerformConversions::class,
         ]);
     }
 

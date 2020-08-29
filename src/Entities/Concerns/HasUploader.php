@@ -40,7 +40,7 @@ trait HasUploader
                     ])->save();
 
                     if (Config::get('laravel-media-uploader.regenerate-after-assigning')) {
-                        Artisan::call('medialibrary:regenerate', [
+                        Artisan::call('media-library:regenerate', [
                             '--ids' => $media->id,
                         ]);
                     }

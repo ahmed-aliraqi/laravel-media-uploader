@@ -9,17 +9,18 @@ use FFMpeg\Media\Audio;
 use FFMpeg\Media\Video;
 use Illuminate\Support\Facades\Config;
 use Intervention\Image\Facades\Image;
-use Spatie\MediaLibrary\ImageGenerators\FileTypes\Image as ImageGenerator;
-use Spatie\MediaLibrary\Jobs\PerformConversions as BasePerformConversions;
+use Spatie\MediaLibrary\Conversions\FileManipulator;
+use Spatie\MediaLibrary\Conversions\ImageGenerators\Image as ImageGenerator;
+use Spatie\MediaLibrary\Conversions\Jobs\PerformConversionsJob as BasePerformConversions;
 
 class PerformConversions extends BasePerformConversions
 {
-    public function handle(): bool
+    public function handle(FileManipulator $fileManipulator): bool
     {
         // Conversion Done...
         if ($this->media->getCustomProperty('status') == 'processed') {
             // Skipped Processing Media File
-            return parent::handle();
+            return parent::handle($fileManipulator);
         }
 
         $this->media->setCustomProperty('status', 'processing')->save();
