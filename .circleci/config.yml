@@ -37,8 +37,5 @@ jobs:
                   key: v1-dependencies-{{ checksum "composer.json" }}
                   paths:
                       - ./vendor
-            # prepare the database
-            - run: php artisan migrate --env=testing --database=":memory:" --force
-
             # run tests with phpunit or codecept
             - run: ./vendor/bin/phpunit
