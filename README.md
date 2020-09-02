@@ -1,5 +1,6 @@
 # Laravel Media Uploader
 <p align="center">
+<a href="https://github.com/ahmed-aliraqi/laravel-media-uploader/actions"><img src="https://github.com/ahmed-aliraqi/laravel-media-uploader/workflows/tests/badge.svg" alt="Build Status"></a>
 	<a href="https://github.styleci.io/repos/275045511">
 	    <img src="https://github.styleci.io/repos/275045511/shield?style=flat" alt="StyleCI">
 	</a>
