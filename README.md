@@ -1,8 +1,13 @@
 # Laravel Media Uploader
 <p align="center">
-	<a href="https://github.styleci.io/repos/275045511"><img src="https://github.styleci.io/repos/179407016/shield?branch=master" alt="StyleCI"></a>
+	<a href="https://github.styleci.io/repos/275045511">
+	    <img src="https://github.styleci.io/repos/275045511/shield?style=flat" alt="StyleCI">
+	</a>
 	<a href="https://travis-ci.org/ahmed-aliraqi/laravel-media-uploader">
 		<img src="https://travis-ci.org/ahmed-aliraqi/laravel-media-uploader.svg?branch=master" alt="Travis Build Status">
+	</a>
+	<a href="https://circleci.com/gh/ahmed-aliraqi/laravel-media-uploader">
+		<img src="https://circleci.com/gh/ahmed-aliraqi/laravel-media-uploader.svg?style=svg" alt="CircleCI">
 	</a>
 	<a href="https://packagist.org/packages/ahmed-aliraqi/laravel-media-uploader">
 		<img src="https://poser.pugx.org/ahmed-aliraqi/laravel-media-uploader/d/total.svg" alt="Total Downloads">
