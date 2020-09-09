@@ -1,10 +1,10 @@
 # Release Notes for Laravel Media Uploader
-### v4.0.0
-* **Changes**
-    - Upgraded media-library to ^8.0. [c7f1e8e](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/c7f1e8eda602d4b377cb33c98cf244c200dd1cf1)
 ### v4.1.0
 * **Added**
     - Add support for laravel 8.x
+### v4.0.0
+* **Changes**
+    - Upgraded media-library to ^8.0. [c7f1e8e](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/c7f1e8eda602d4b377cb33c98cf244c200dd1cf1)
 ### v3.0.0
 * **Changes**
     - change vendor name of laravel-bootstrap-forms. [d09599d](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/d09599d07d8e6ca92f393de0dd0a47cc1c934b32)
