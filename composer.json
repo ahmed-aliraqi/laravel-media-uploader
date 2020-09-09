@@ -11,14 +11,13 @@
     ],
     "require": {
         "php": "^7.4",
-        "laravel/framework": "~5.7|~5.8|^6.0|^7.0",
         "spatie/laravel-medialibrary": "^8.0",
         "php-ffmpeg/php-ffmpeg": "^0.16.0",
         "laraeast/laravel-bootstrap-forms": "^5.0"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.0",
-        "mockery/mockery": "^1.2"
+        "orchestra/testbench": "^5.3|^6.0",
+        "mockery/mockery": "^1.4"
     },
     "autoload": {
         "psr-4": {
