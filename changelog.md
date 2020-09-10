@@ -1,5 +1,5 @@
 # Release Notes for Laravel Media Uploader
-### v4.2.0
+### v4.1.1
 * **Fixes**
     - Fix support for laravel 8.x [678f06d](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/678f06d8441c2cbd8923bc3f0c6aa7b831c36f78)
 ### v4.1.0
