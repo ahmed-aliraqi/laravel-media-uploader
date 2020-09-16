@@ -36,15 +36,14 @@ class ImageComponent extends BaseComponent
     /**
      * Initialized the input arguments.
      *
-     * @param null $name
-     * @param array $files
+     * @param mixed ...$arguments
      * @return $this
      */
-    public function init($name = null, $files = [])
+    public function init(...$arguments)
     {
-        $this->name = $name;
+        $this->name = $name = $arguments[0] ?? null;
 
-        $this->value = $files;
+        $this->value = $arguments[1] ?? null;
 
         $this->setDefaultLabel();
 
