@@ -10,7 +10,7 @@
 
 > This package used to upload files using laravel-media-library before saving model.
 
-![Uploader](https://i.imgur.com/zspIP0f.gif)
+![Uploader](https://github.com/ahmed-aliraqi/laravel-file-uploader/blob/master/screenshots/uploader.gif?raw=true)
 
 > In this package all uploaded media will be processed.
 * All videos will converted to `mp4`.
