@@ -130,7 +130,7 @@ $blog->addAllMediaFromTokens($request->input('tokens', []), 'pictures');
 ```blade
 <div id="app">
     <file-uploader
-            :max="1"
+            :unlimited="true"
             collection="avatars"
             :tokens="{{ json_encode(old('media', [])) }}"
             label="Upload Avatar"
@@ -165,7 +165,7 @@ Vue.use(FileUploader);
 #### Usage
 ```blade
 <file-uploader :media="{{ $user->getMediaResource('avatars') }}"
-               :max="1"
+               :unlimited="true"
                collection="avatars"
                :tokens="{{ json_encode(old('media', [])) }}"
                label="Upload Avatar"
@@ -177,8 +177,10 @@ Vue.use(FileUploader);
 | Attribute |Rule | Type  |Description |
 |--|--|--|--|
 | media | optional - default: `[]`  |array | used to display an existing files  |
+| unlimited |optional - default:`false`| boolean| upload unlimited files - if let it `false` will not be multiple select|
 | max|optional - default:`12`| int| the maximum uploaded files - if `1` will not me multiple select|
 |accept| optional - default: `*`| string| the accepted mime types|
+|form| optional - default: `false`| string| the form id of the uploaded media|
 |notes| optional - default `null`| string| the help-block that will be displayed under the files|
 |label| optional - default `null`| string| the label of the uploader|
 |collection| optional - default `default`|string| the media library collection that the file will store in|
@@ -192,6 +194,9 @@ Vue.use(FileUploader);
 ```
 ```blade
 {{ BsForm::image('avatar')->max(3)->collection('avatars')->files($user->getMediaResource('avatars')) }}
+```
+```blade
+{{ BsForm::image('image')->unlimited()->files($user->getMediaResource()) }}
 ```
 ```blade
 {{ BsForm::image('avatar')->collection('avatars') }}

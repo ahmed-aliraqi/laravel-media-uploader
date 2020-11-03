@@ -31,6 +31,16 @@ class ImageComponent extends BaseComponent
     /**
      * @var string
      */
+    protected $form;
+
+    /**
+     * @var bool
+     */
+    protected $unlimited = false;
+
+    /**
+     * @var string
+     */
     protected $collection = 'default';
 
     /**
@@ -61,6 +71,30 @@ class ImageComponent extends BaseComponent
     public function files($files = [])
     {
         $this->files = $files;
+
+        return $this;
+    }
+
+    /**
+     * Upload unlimited files.
+     *
+     * @return $this
+     */
+    public function unlimited()
+    {
+        $this->unlimited = true;
+
+        return $this;
+    }
+
+    /**
+     * Set the media's form.
+     *
+     * @return $this
+     */
+    public function form($form)
+    {
+        $this->form = $form;
 
         return $this;
     }
@@ -114,6 +148,8 @@ class ImageComponent extends BaseComponent
             'max' => $this->max,
             'notes' => $this->notes,
             'collection' => $this->collection,
+            'form' => $this->form,
+            'unlimited' => $this->unlimited,
         ];
     }
 }
