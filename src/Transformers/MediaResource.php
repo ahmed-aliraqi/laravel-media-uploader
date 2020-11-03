@@ -17,7 +17,7 @@ class MediaResource extends JsonResource
         return [
             'id' => $this->id,
             'url' => $this->getFullUrl(),
-            'preview' => $this->when($this->getPreviewUrl(), $this->getPreviewUrl()),
+            'preview' => $this->getPreviewUrl(),
             'name' => $this->name,
             'file_name' => $this->file_name,
             'type' => $this->getType(),
@@ -106,6 +106,8 @@ class MediaResource extends JsonResource
         if ($this->getType() == 'image') {
             return $this->getFullUrl();
         }
+
+        return 'https://cdn.jsdelivr.net/npm/laravel-file-uploader/dist/img/attach.png';
     }
 
     /**
