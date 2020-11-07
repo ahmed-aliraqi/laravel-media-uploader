@@ -84,7 +84,6 @@ jobs:
                   extensions: dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, gd, pdo_mysql, fileinfo, ftp
                   tools: composer:v2
                   coverage: none
-                  ini-values: memory_limit=512M
 
             - name: Install dependencies
               run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress
