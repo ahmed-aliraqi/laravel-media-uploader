@@ -17,4 +17,16 @@ class Blog extends Model implements HasMedia
      * @var string
      */
     protected $table = 'blogs';
+
+    /**
+     * Define the media collections.
+     *
+     * @return void
+     */
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('default')
+            ->onlyKeepLatest(2);
+    }
 }

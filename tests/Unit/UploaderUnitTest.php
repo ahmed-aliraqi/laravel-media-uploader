@@ -62,4 +62,31 @@ class UploaderUnitTest extends TestCase
         $this->assertEquals($media->model_type, Blog::class);
         $this->assertEquals($media->model_id, $blog->id);
     }
+
+    /** @test */
+    public function it_keep_only_configured_latest_media()
+    {
+        $blog = Blog::create();
+
+        $blog->addMedia(UploadedFile::fake()->create('thumbnail.jpg', 200))->toMediaCollection();
+
+        $this->assertCount(1, $blog->refresh()->getMedia());
+
+        $tmp = TemporaryFile::create(['token' => 123, 'collection' => 'default']);
+
+        $tmp->addMedia(UploadedFile::fake()->create('thumbnail.jpg', 200))->toMediaCollection();
+
+        $blog->addAllMediaFromTokens([123]);
+
+        $this->assertCount(2, $blog->refresh()->getMedia());
+
+        $tmp = TemporaryFile::create(['token' => 123, 'collection' => 'default']);
+
+        $tmp->addMedia(UploadedFile::fake()->create('thumbnail.jpg', 200))->toMediaCollection();
+        $tmp->addMedia(UploadedFile::fake()->create('thumbnail.jpg', 200))->toMediaCollection();
+
+        $blog->addAllMediaFromTokens([123]);
+
+        $this->assertCount(2, $blog->refresh()->getMedia());
+    }
 }

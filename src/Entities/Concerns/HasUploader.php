@@ -48,6 +48,21 @@ trait HasUploader
 
                 $file->delete();
             });
+
+        $collection = $collection ?: 'default';
+
+        if ($collectionSizeLimit = optional($this->getMediaCollection($collection))->collectionSizeLimit) {
+            $collectionMedia = $this->refresh()->getMedia($collection);
+
+            if ($collectionMedia->count() > $collectionSizeLimit) {
+                $this->clearMediaCollectionExcept(
+                    $collection,
+                    $collectionMedia
+                        ->reverse()
+                        ->take($collectionSizeLimit)
+                );
+            }
+        }
     }
 
     /**
