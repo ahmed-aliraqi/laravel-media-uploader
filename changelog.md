@@ -1,4 +1,7 @@
 # Release Notes for Laravel Media Uploader
+### v5.0.1
+* **Fixes**
+    - Keep only configured latest media [4e3f6e6](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/4e3f6e6c4b25797fafa1cae3173e89a93e260339).
 ### v5.0.0
 * **Added**
     - Add `form` and `unlimited` option to form component.
