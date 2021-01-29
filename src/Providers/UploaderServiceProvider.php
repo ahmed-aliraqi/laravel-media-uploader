@@ -24,7 +24,7 @@ class UploaderServiceProvider extends ServiceProvider
     public function boot()
     {
         if (! defined('STDIN')) {
-            define('STDIN', fopen("php://stdin", "r"));
+            define('STDIN', fopen('php://stdin', 'r'));
         }
 
         $this->registerConfig();
