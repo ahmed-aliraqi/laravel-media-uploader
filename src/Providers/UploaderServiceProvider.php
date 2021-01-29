@@ -3,7 +3,10 @@
 namespace AhmedAliraqi\LaravelMediaUploader\Providers;
 
 use AhmedAliraqi\LaravelMediaUploader\Console\TemporaryClearCommand;
+use AhmedAliraqi\LaravelMediaUploader\Forms\Components\AudioComponent;
 use AhmedAliraqi\LaravelMediaUploader\Forms\Components\ImageComponent;
+use AhmedAliraqi\LaravelMediaUploader\Forms\Components\MediaComponent;
+use AhmedAliraqi\LaravelMediaUploader\Forms\Components\VideoComponent;
 use AhmedAliraqi\LaravelMediaUploader\Jobs\PerformConversions;
 use AhmedAliraqi\LaravelMediaUploader\Support\FFmpegDriver;
 use Illuminate\Console\Scheduling\Schedule;
@@ -44,6 +47,9 @@ class UploaderServiceProvider extends ServiceProvider
         });
 
         BsForm::registerComponent('image', ImageComponent::class);
+        BsForm::registerComponent('audio', AudioComponent::class);
+        BsForm::registerComponent('video', VideoComponent::class);
+        BsForm::registerComponent('media', MediaComponent::class);
 
         Config::set([
             'media-library.jobs.perform_conversions' => PerformConversions::class,

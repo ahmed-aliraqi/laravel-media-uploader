@@ -191,6 +191,9 @@ Vue.use(FileUploader);
 
 ```blade
 {{ BsForm::image('avatar')->collection('avatars')->files($user->getMediaResource('avatars')) }}
+{{ BsForm::audio('audio')->collection('audios')->files($user->getMediaResource('audios')) }}
+{{ BsForm::video('video')->collection('videos')->files($user->getMediaResource('videos')) }}
+{{ BsForm::media('media')->collection('videos')->accept('video/*')->files($user->getMediaResource('videos')) }}
 ```
 ```blade
 {{ BsForm::image('avatar')->max(3)->collection('avatars')->files($user->getMediaResource('avatars')) }}

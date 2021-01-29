@@ -1,4 +1,12 @@
 # Release Notes for Laravel Media Uploader
+### v5.1.0
+* **Added**
+  - Add `AudioComponent` for `laravel-bootstrap-forms`,
+  - Add `VideoComponent` for `laravel-bootstrap-forms`,
+  - Add `Audioomponent` for `laravel-bootstrap-forms`,
+  - Add `Mediaomponent` for `laravel-bootstrap-forms`,
+  - Add `_ide_helper.php` file to provide autocomplete information to your IDE.
+
 ### v5.0.1
 * **Fixes**
     - Keep only configured latest media [4e3f6e6](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/4e3f6e6c4b25797fafa1cae3173e89a93e260339).
