@@ -2,7 +2,9 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Transformers;
 
+use Spatie\MediaLibrary\Conversions\Conversion;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Spatie\MediaLibrary\Conversions\ConversionCollection;
 
 class MediaResource extends JsonResource
 {
@@ -49,8 +51,14 @@ class MediaResource extends JsonResource
     {
         $results = [];
 
-        foreach (array_keys($this->getGeneratedConversions()->toArray()) as $conversion) {
-            $results[$conversion] = $this->getFullUrl($conversion);
+        foreach (array_keys($this->getGeneratedConversions()->toArray()) as $conversionName) {
+
+            $conversion = ConversionCollection::createForMedia($this->resource)
+                ->first(fn (Conversion $conversion) => $conversion->getName() === $conversionName);
+
+            if ($conversion) {
+                $results[$conversionName] = $this->getFullUrl($conversionName);
+            }
         }
 
         return $results;
