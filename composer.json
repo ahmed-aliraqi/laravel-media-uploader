@@ -12,8 +12,8 @@
     "require": {
         "php": "^7.4|^8.0",
         "laravel/framework": "~5.7|~5.8|^6.0|^7.0|^8.0",
-        "spatie/laravel-medialibrary": "^8.0",
-        "php-ffmpeg/php-ffmpeg": "^0.16.0",
+        "spatie/laravel-medialibrary": "^9.0",
+        "php-ffmpeg/php-ffmpeg": "^0.17",
         "laraeast/laravel-bootstrap-forms": "^5.0"
     },
     "require-dev": {
