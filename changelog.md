@@ -4,6 +4,7 @@
   - Add support for php 8.0
 * **Changes**
   - Use `MediaHasBeenAdded` Event instead of `PerformConversionsJob`
+  - Bump `laravel media library` from ^8.0 to ^9.0
 ### v5.1.0
 * **Added**
   - Add `AudioComponent` for `laravel-bootstrap-forms`,
