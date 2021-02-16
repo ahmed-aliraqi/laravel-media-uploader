@@ -1,5 +1,4 @@
 name: tests
-
 on:
     push:
     pull_request:
@@ -7,73 +6,29 @@ on:
         - cron: '0 0 * * *'
 
 jobs:
-    linux_tests:
-
+    run-tests:
         runs-on: ubuntu-latest
-        services:
-            mysql:
-                image: mysql:5.7
-                env:
-                    MYSQL_ALLOW_EMPTY_PASSWORD: yes
-                    MYSQL_DATABASE: forge
-                ports:
-                    - 33306:3306
-                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-            redis:
-                image: redis:5.0
-                ports:
-                    - 6379:6379
-                options: --entrypoint redis-server
         strategy:
-            fail-fast: true
+            fail-fast: false
             matrix:
                 php: [7.4]
-                stability: [prefer-lowest, prefer-stable]
-
-        name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
-
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
-
-            - name: Setup PHP
-              uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, gd
-                  tools: composer:v2
-                  coverage: none
-
-            - name: Setup Memcached
-              uses: niden/actions-memcached@v7
-
-            - name: Install dependencies
-              run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress
-
-            - name: Execute tests
-              run: vendor/bin/phpunit --verbose
-              env:
-                  DB_PORT: ${{ job.services.mysql.ports[3306] }}
-                  DB_USERNAME: root
-
-    windows_tests:
-
-        runs-on: windows-latest
-        strategy:
-            fail-fast: true
-            matrix:
-                php: [7.4]
+                laravel: [8.*, 7.*]
+                dependency-version: [prefer-lowest, prefer-stable]
                 include:
-                    - php: 7.4
-                      stability: prefer-stable
+                    - laravel: 8.*
+                      testbench: 6.*
+                    - laravel: 7.*
+                      testbench: 5.*
 
-        name: PHP ${{ matrix.php }} - ${{ matrix.stability }} - Windows
+        name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
         steps:
-            - name: Set git to use LF
-              run: |
-                  git config --global core.autocrlf false
-                  git config --global core.eol lf
+            - name: Update apt
+              run: sudo apt-get update --fix-missing
+
+            - name: Install ffmpeg
+              run: sudo apt-get install ffmpeg
+
             - name: Checkout code
               uses: actions/checkout@v2
 
@@ -81,12 +36,24 @@ jobs:
               uses: shivammathur/setup-php@v2
               with:
                   php-version: ${{ matrix.php }}
-                  extensions: dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, gd, pdo_mysql, fileinfo, ftp
-                  tools: composer:v2
+                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
                   coverage: none
 
-            - name: Install dependencies
-              run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress
+            - name: Setup Problem Matches
+              run: |
+                  echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+                  echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+            - name: Fix Imagick Policy
+              run: sudo sed -i 's/none/read|write/g' /etc/ImageMagick-6/policy.xml
 
+            - name: Install dependencies
+              run: |
+                  composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+                  composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest
             - name: Execute tests
-              run: vendor/bin/phpunit --verbose
+              run: vendor/bin/phpunit
+              env:
+                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+                  AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
