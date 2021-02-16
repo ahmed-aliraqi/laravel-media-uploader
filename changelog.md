@@ -1,4 +1,9 @@
 # Release Notes for Laravel Media Uploader
+### v6.0.0
+* **Added**
+  - Add support for php 8.0
+* **Changes**
+  - Use `MediaHasBeenAdded` Event instead of `PerformConversionsJob`
 ### v5.1.0
 * **Added**
   - Add `AudioComponent` for `laravel-bootstrap-forms`,
