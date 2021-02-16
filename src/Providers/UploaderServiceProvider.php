@@ -7,10 +7,8 @@ use AhmedAliraqi\LaravelMediaUploader\Forms\Components\AudioComponent;
 use AhmedAliraqi\LaravelMediaUploader\Forms\Components\ImageComponent;
 use AhmedAliraqi\LaravelMediaUploader\Forms\Components\MediaComponent;
 use AhmedAliraqi\LaravelMediaUploader\Forms\Components\VideoComponent;
-use AhmedAliraqi\LaravelMediaUploader\Jobs\PerformConversions;
 use AhmedAliraqi\LaravelMediaUploader\Support\FFmpegDriver;
 use Illuminate\Console\Scheduling\Schedule;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Laraeast\LaravelBootstrapForms\Facades\BsForm;
 
@@ -50,10 +48,6 @@ class UploaderServiceProvider extends ServiceProvider
         BsForm::registerComponent('audio', AudioComponent::class);
         BsForm::registerComponent('video', VideoComponent::class);
         BsForm::registerComponent('media', MediaComponent::class);
-
-        Config::set([
-            'media-library.jobs.perform_conversions' => PerformConversions::class,
-        ]);
     }
 
     /**
@@ -64,6 +58,7 @@ class UploaderServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(EventServiceProvider::class);
 
         $this->app->singleton('ffmpeg-driver', function () {
             return (new FFmpegDriver())->driver();

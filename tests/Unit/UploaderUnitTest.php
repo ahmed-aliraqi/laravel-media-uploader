@@ -40,7 +40,7 @@ class UploaderUnitTest extends TestCase
 
         $tmp->addMedia(
             UploadedFile::fake()
-                ->create('thumbnail.jpg', 200)
+                ->image('thumbnail.jpg', 200)
         )->toMediaCollection();
 
         $media = $tmp->getFirstMedia('default');
@@ -68,13 +68,13 @@ class UploaderUnitTest extends TestCase
     {
         $blog = Blog::create();
 
-        $blog->addMedia(UploadedFile::fake()->create('thumbnail.jpg', 200))->toMediaCollection();
+        $blog->addMedia(UploadedFile::fake()->image('thumbnail.jpg', 200))->toMediaCollection();
 
         $this->assertCount(1, $blog->refresh()->getMedia());
 
         $tmp = TemporaryFile::create(['token' => 123, 'collection' => 'default']);
 
-        $tmp->addMedia(UploadedFile::fake()->create('thumbnail.jpg', 200))->toMediaCollection();
+        $tmp->addMedia(UploadedFile::fake()->image('thumbnail.jpg', 200))->toMediaCollection();
 
         $blog->addAllMediaFromTokens([123]);
 
@@ -82,8 +82,8 @@ class UploaderUnitTest extends TestCase
 
         $tmp = TemporaryFile::create(['token' => 123, 'collection' => 'default']);
 
-        $tmp->addMedia(UploadedFile::fake()->create('thumbnail.jpg', 200))->toMediaCollection();
-        $tmp->addMedia(UploadedFile::fake()->create('thumbnail.jpg', 200))->toMediaCollection();
+        $tmp->addMedia(UploadedFile::fake()->image('thumbnail.jpg', 200))->toMediaCollection();
+        $tmp->addMedia(UploadedFile::fake()->image('thumbnail.jpg', 200))->toMediaCollection();
 
         $blog->addAllMediaFromTokens([123]);
 

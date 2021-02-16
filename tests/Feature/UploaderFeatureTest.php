@@ -15,7 +15,7 @@ class UploaderFeatureTest extends TestCase
         Storage::fake('public');
 
         $response = $this->postJson(url('/api/uploader/media/upload'), [
-            'files' => [UploadedFile::fake()->create('thumbnail.jpg', 200)],
+            'files' => [UploadedFile::fake()->image('thumbnail.jpg', 200)],
             'collection' => 'images',
         ]);
 
