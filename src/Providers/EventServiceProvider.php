@@ -2,9 +2,9 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Providers;
 
-use Spatie\MediaLibrary\MediaCollections\Events\MediaHasBeenAdded;
 use AhmedAliraqi\LaravelMediaUploader\Listeners\ProcessUploadedMedia;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Spatie\MediaLibrary\MediaCollections\Events\MediaHasBeenAdded;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,5 +18,4 @@ class EventServiceProvider extends ServiceProvider
             ProcessUploadedMedia::class,
         ],
     ];
-
 }

@@ -2,17 +2,16 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Listeners;
 
-use RuntimeException;
-use FFMpeg\Media\Audio;
-use FFMpeg\Media\Video;
 use FFMpeg\Format\Audio\Mp3;
 use FFMpeg\Format\Video\X264;
-use Intervention\Image\Facades\Image;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Queue\InteractsWithQueue;
+use FFMpeg\Media\Audio;
+use FFMpeg\Media\Video;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Spatie\MediaLibrary\MediaCollections\Events\MediaHasBeenAdded;
+use Illuminate\Support\Facades\Config;
+use Intervention\Image\Facades\Image;
+use RuntimeException;
 use Spatie\MediaLibrary\Conversions\ImageGenerators\Image as ImageGenerator;
+use Spatie\MediaLibrary\MediaCollections\Events\MediaHasBeenAdded;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProcessUploadedMedia implements ShouldQueue
