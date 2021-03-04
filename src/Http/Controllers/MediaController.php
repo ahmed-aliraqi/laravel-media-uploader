@@ -31,6 +31,9 @@ class MediaController extends Controller
             [TemporaryFile::class],
             function (Builder $builder) use ($tokens) {
                 $builder->whereIn('token', $tokens);
+                $builder->when(request('collection'), function (Builder $builder) {
+                    $builder->where(request()->only('collection'));
+                });
             }
         )->get();
 
