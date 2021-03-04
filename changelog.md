@@ -1,4 +1,7 @@
 # Release Notes for Laravel Media Uploader
+### v6.0.1
+* **Fixes**
+  - Add ability to filter by collection with token to avoid duplicate the old media.
 ### v6.0.0
 * **Added**
   - Add support for php 8.0
