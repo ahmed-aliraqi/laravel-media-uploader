@@ -39,6 +39,10 @@ class MediaRule implements Rule
      */
     public function passes($attribute, $value)
     {
+        if (is_string($value) && base64_decode(base64_encode($value)) === $value) {
+            return true;
+        }
+
         if (! $value instanceof UploadedFile) {
             return false;
         }

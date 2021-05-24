@@ -57,6 +57,12 @@ class MediaController extends Controller
             'collection' => $request->input('collection', 'default'),
         ]);
 
+        if (is_string($request->file) && base64_decode(base64_encode($request->file)) === $request->file) {
+            $temporaryFile->addMediaFromBase64($request->file)
+                ->usingFileName(time().'.png')
+                ->toMediaCollection($temporaryFile->collection);
+        }
+
         if ($request->hasFile('file')) {
             $temporaryFile->addMedia($request->file)
                 ->usingFileName($this->formatName($request->file))

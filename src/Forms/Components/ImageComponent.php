@@ -34,6 +34,16 @@ class ImageComponent extends BaseComponent
     protected $form;
 
     /**
+     * @var mixed
+     */
+    protected $maxWidth = 1200;
+
+    /**
+     * @var mixed
+     */
+    protected $maxHeight = 1200;
+
+    /**
      * @var bool
      */
     protected $unlimited = false;
@@ -137,6 +147,28 @@ class ImageComponent extends BaseComponent
     }
 
     /**
+     * @param mixed $width
+     * @return $this
+     */
+    public function maxWidth($width = 1200)
+    {
+        $this->maxWidth = $width;
+
+        return $this;
+    }
+
+    /**
+     * @param mixed $height
+     * @return $this
+     */
+    public function maxHeight($height = 1200)
+    {
+        $this->maxWidth = $height;
+
+        return $this;
+    }
+
+    /**
      * The variables with registered in view component.
      *
      * @return array
@@ -150,6 +182,8 @@ class ImageComponent extends BaseComponent
             'collection' => $this->collection,
             'form' => $this->form,
             'unlimited' => $this->unlimited,
+            'maxWidth' => $this->maxWidth,
+            'maxHeight' => $this->maxHeight,
         ];
     }
 }

@@ -184,6 +184,8 @@ Vue.use(FileUploader);
 |label| optional - default `null`| string| the label of the uploader|
 |collection| optional - default `default`|string| the media library collection that the file will store in|
 |tokens| optional - default: `[]`|array|the recently uploaded files tokens, used to display recently uploaded files in validation case|
+|max-width| optional - default: `1200`|string|The maximum width of uploaded image|
+|max-height| optional - default: `1200`|string|The maximum height of uploaded image|
 
 #### Using with BsForm
 > This uploader support [laravel-bootstrap-forms](https://github.com/laraeast/laravel-bootstrap-forms) you can use the `image` custom component instead of vue html tag:
@@ -196,6 +198,14 @@ Vue.use(FileUploader);
 ```
 ```blade
 {{ BsForm::image('avatar')->max(3)->collection('avatars')->files($user->getMediaResource('avatars')) }}
+```
+```blade
+{{ BsForm::image('avatar')
+    ->max(3)
+    ->collection('avatars')
+    ->maxWidth(500)
+    ->maxHeight(500)
+    ->files($user->getMediaResource('avatars')) }}
 ```
 ```blade
 {{ BsForm::image('image')->unlimited()->files($user->getMediaResource()) }}
