@@ -1,4 +1,7 @@
 # Release Notes for Laravel Media Uploader
+### v6.1.0
+* **Added**
+  - Optimize and Upload images as base64.
 ### v6.0.1
 * **Fixes**
   - Add ability to filter by collection with token to avoid duplicate the old media.
