@@ -163,7 +163,7 @@ class ImageComponent extends BaseComponent
      */
     public function maxHeight($height = 1200)
     {
-        $this->maxWidth = $height;
+        $this->maxHeight = $height;
 
         return $this;
     }
