@@ -1,4 +1,7 @@
 # Release Notes for Laravel Media Uploader
+### v6.1.2
+* **Fixes**
+  - Replace Hindu-Arabic numerals to Arabic numerals [4e45b49](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/4e45b4945a8311eecb53e3fd26062934b43aeea4)
 ### v6.1.0
 * **Added**
   - Optimize and Upload images as base64.
