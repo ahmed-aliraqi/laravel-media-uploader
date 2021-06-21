@@ -41,9 +41,7 @@ class UploaderServiceProvider extends ServiceProvider
 
         $this->app->booted(function () {
             $schedule = $this->app->make(Schedule::class);
-            $schedule->command('temporary:clean')
-                ->spliceIntoPosition(1, 0)
-                ->spliceIntoPosition(2, '*/6');
+            $schedule->command('temporary:clean')->everySixHours();
         });
 
         BsForm::registerComponent('image', ImageComponent::class);
