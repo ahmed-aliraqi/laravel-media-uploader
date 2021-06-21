@@ -3,11 +3,13 @@
 namespace AhmedAliraqi\LaravelMediaUploader\Tests\Unit;
 
 use AhmedAliraqi\LaravelMediaUploader\Entities\TemporaryFile;
+use AhmedAliraqi\LaravelMediaUploader\Support\Uploader;
 use AhmedAliraqi\LaravelMediaUploader\Tests\Models\Blog;
 use AhmedAliraqi\LaravelMediaUploader\Tests\TestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class UploaderUnitTest extends TestCase
 {
@@ -88,5 +90,19 @@ class UploaderUnitTest extends TestCase
         $blog->addAllMediaFromTokens([123]);
 
         $this->assertCount(2, $blog->refresh()->getMedia());
+    }
+
+    public function test_uploader_helper()
+    {
+        $this->assertEquals(
+            Str::slug('صورة').'.jpg',
+            Uploader::formatName(UploadedFile::fake()->image('صورة.jpg', 200))
+        );
+
+        $this->assertEquals(
+            '123.jpg',
+            Uploader::formatName(UploadedFile::fake()->image('١٢٣.jpg', 200))
+        );
+
     }
 }
