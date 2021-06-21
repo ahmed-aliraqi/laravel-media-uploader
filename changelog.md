@@ -1,4 +1,9 @@
 # Release Notes for Laravel Media Uploader
+### v6.2.0
+* **Fixes**
+  - Clean the temporary files every six hours [b132699](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/b1326999f3cac6a548bad11c00cf2d7da0287b0d)
+* **Added**
+  - Add Uploader helper [4e743bf](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/4e743bfefdcf03e6d9b3e0d05966f2c08e71ddda)
 ### v6.1.2
 * **Fixes**
   - Replace Hindu-Arabic numerals to Arabic numerals [4e45b49](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/4e45b4945a8311eecb53e3fd26062934b43aeea4)
