@@ -39,10 +39,12 @@ class UploaderServiceProvider extends ServiceProvider
             TemporaryClearCommand::class,
         ]);
 
-        $this->app->booted(function () {
-            $schedule = $this->app->make(Schedule::class);
-            $schedule->command('temporary:clean')->everySixHours();
-        });
+        if (! $this->app->runningUnitTests()) {
+            $this->app->booted(function () {
+                $schedule = $this->app->make(Schedule::class);
+                $schedule->command('temporary:clean')->everySixHours();
+            });
+        }
 
         BsForm::registerComponent('image', ImageComponent::class);
         BsForm::registerComponent('audio', AudioComponent::class);
