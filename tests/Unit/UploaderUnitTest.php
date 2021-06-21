@@ -103,6 +103,5 @@ class UploaderUnitTest extends TestCase
             '123.jpg',
             Uploader::formatName(UploadedFile::fake()->image('١٢٣.jpg', 200))
         );
-
     }
 }
