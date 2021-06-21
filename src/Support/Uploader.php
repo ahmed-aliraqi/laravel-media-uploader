@@ -2,8 +2,8 @@
 
 namespace AhmedAliraqi\LaravelMediaUploader\Support;
 
-use Illuminate\Support\Str;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Str;
 
 class Uploader
 {
