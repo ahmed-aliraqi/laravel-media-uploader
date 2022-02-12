@@ -33,8 +33,8 @@ class MediaRule implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param UploadedFile|mixed $value
+     * @param  string  $attribute
+     * @param  UploadedFile|mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
@@ -67,7 +67,7 @@ class MediaRule implements Rule
     }
 
     /**
-     * @param UploadedFile|mixed $value
+     * @param  UploadedFile|mixed  $value
      * @return string
      */
     protected function getTypeString($value): string

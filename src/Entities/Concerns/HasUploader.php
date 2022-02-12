@@ -13,8 +13,8 @@ trait HasUploader
     /**
      * Assign all uploaded temporary files to the model.
      *
-     * @param string|array|null $tokens
-     * @param string|null $collection
+     * @param  string|array|null  $tokens
+     * @param  string|null  $collection
      * @return void
      */
     public function addAllMediaFromTokens($tokens = null, $collection = null)
@@ -68,7 +68,7 @@ trait HasUploader
     /**
      * Get all the model media of the given collection using "MediaResource".
      *
-     * @param string $collection
+     * @param  string  $collection
      * @return \Illuminate\Support\Collection
      */
     public function getMediaResource($collection = 'default')
