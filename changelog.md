@@ -1,5 +1,8 @@
 # Release Notes for Laravel Media Uploader
-### v6.2.0
+### v6.3.0
+* **Added**
+  - Add Support for laravel 9.x [18](https://github.com/ahmed-aliraqi/laravel-media-uploader/pull/18) by [AbdullahFaqeir](https://github.com/AbdullahFaqeir)
+  ### v6.2.0
 * **Fixes**
   - Clean the temporary files every six hours [b132699](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/b1326999f3cac6a548bad11c00cf2d7da0287b0d)
 * **Added**
