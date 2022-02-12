@@ -17,7 +17,7 @@
         "laraeast/laravel-bootstrap-forms": "^5.0"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.0|~5.3|~6.0",
+        "orchestra/testbench": "~3.0|~5.3|~6.0|~7.0",
         "mockery/mockery": "^1.4"
     },
     "autoload": {
