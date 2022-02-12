@@ -17,6 +17,7 @@ jobs:
                 include:
                     - laravel: 9.*
                       testbench: 7.*
+                      laravel-medialibrary: 10.*
 
         name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
