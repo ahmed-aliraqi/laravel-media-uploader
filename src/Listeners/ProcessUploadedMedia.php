@@ -19,9 +19,10 @@ class ProcessUploadedMedia implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param MediaHasBeenAdded $event
-     * @throws \Exception
+     * @param  MediaHasBeenAdded  $event
      * @return void
+     *
+     * @throws \Exception
      */
     public function handle(MediaHasBeenAdded $event)
     {
@@ -57,7 +58,7 @@ class ProcessUploadedMedia implements ShouldQueue
     /**
      * Determine if the media file is an image.
      *
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
      * @return bool
      */
     protected function isImage(Media $media)
@@ -68,7 +69,7 @@ class ProcessUploadedMedia implements ShouldQueue
     /**
      * Determine if the media file is a document.
      *
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
      * @return bool
      */
     protected function isDocument(Media $media)
@@ -82,7 +83,7 @@ class ProcessUploadedMedia implements ShouldQueue
     /**
      * Determine if the media file is a video and initiate the required driver.
      *
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
      * @return bool
      */
     protected function isVideo(Media $media)
@@ -93,7 +94,7 @@ class ProcessUploadedMedia implements ShouldQueue
     /**
      * Determine if the media file is an audio and the initiate required driver.
      *
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
      * @return bool
      */
     protected function isAudio(Media $media)
@@ -104,7 +105,7 @@ class ProcessUploadedMedia implements ShouldQueue
     /**
      * Process Image File.
      *
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
      * @return null
      */
     protected function processImage(Media $media)
@@ -122,7 +123,7 @@ class ProcessUploadedMedia implements ShouldQueue
     /**
      * Process Document File.
      *
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
      * @return null
      */
     protected function processDocument(Media $media)
@@ -133,7 +134,7 @@ class ProcessUploadedMedia implements ShouldQueue
     /**
      * Process Video File.
      *
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
      * @return string
      */
     protected function processVideo(Media $media)
@@ -158,7 +159,7 @@ class ProcessUploadedMedia implements ShouldQueue
     /**
      * Process Audio File.
      *
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
      * @return string
      */
     protected function processAudio(Media $media)
@@ -177,7 +178,7 @@ class ProcessUploadedMedia implements ShouldQueue
     }
 
     /**
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
      * @return \Closure
      */
     protected function increaseProcessProgress(Media $media): \Closure
@@ -194,10 +195,11 @@ class ProcessUploadedMedia implements ShouldQueue
     }
 
     /**
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
-     * @param null $processedFilePath
-     * @throws \Exception
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
+     * @param  null  $processedFilePath
      * @return void
+     *
+     * @throws \Exception
      */
     protected function processingDone(Media $media, $processedFilePath = null)
     {
@@ -231,7 +233,7 @@ class ProcessUploadedMedia implements ShouldQueue
     /**
      * Mark media status as failed.
      *
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
      */
     protected function processingFailed(Media $media)
     {
@@ -239,8 +241,8 @@ class ProcessUploadedMedia implements ShouldQueue
     }
 
     /**
-     * @param \Spatie\MediaLibrary\MediaCollections\Models\Media $media
-     * @param null $extension
+     * @param  \Spatie\MediaLibrary\MediaCollections\Models\Media  $media
+     * @param  null  $extension
      * @return string
      */
     protected function generatePathForProcessedFile(Media $media, $extension = null)

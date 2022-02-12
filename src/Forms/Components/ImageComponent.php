@@ -56,7 +56,7 @@ class ImageComponent extends BaseComponent
     /**
      * Initialized the input arguments.
      *
-     * @param mixed ...$arguments
+     * @param  mixed  ...$arguments
      * @return $this
      */
     public function init(...$arguments)
@@ -75,7 +75,7 @@ class ImageComponent extends BaseComponent
     /**
      * Set the stored files.
      *
-     * @param array $files
+     * @param  array  $files
      * @return $this
      */
     public function files($files = [])
@@ -112,7 +112,7 @@ class ImageComponent extends BaseComponent
     /**
      * Set the maximum files length.
      *
-     * @param int $max
+     * @param  int  $max
      * @return $this
      */
     public function max($max = 1)
@@ -125,7 +125,7 @@ class ImageComponent extends BaseComponent
     /**
      * Set the maximum files length.
      *
-     * @param null $collection
+     * @param  null  $collection
      * @return $this
      */
     public function collection($collection = null)
@@ -136,7 +136,7 @@ class ImageComponent extends BaseComponent
     }
 
     /**
-     * @param string $notes
+     * @param  string  $notes
      * @return $this
      */
     public function notes($notes = null)
@@ -147,7 +147,7 @@ class ImageComponent extends BaseComponent
     }
 
     /**
-     * @param mixed $width
+     * @param  mixed  $width
      * @return $this
      */
     public function maxWidth($width = 1200)
@@ -158,7 +158,7 @@ class ImageComponent extends BaseComponent
     }
 
     /**
-     * @param mixed $height
+     * @param  mixed  $height
      * @return $this
      */
     public function maxHeight($height = 1200)
