@@ -51,7 +51,7 @@ class MediaComponent extends BaseComponent
     /**
      * Initialized the input arguments.
      *
-     * @param mixed ...$arguments
+     * @param  mixed  ...$arguments
      * @return $this
      */
     public function init(...$arguments)
@@ -70,7 +70,7 @@ class MediaComponent extends BaseComponent
     /**
      * Set the stored files.
      *
-     * @param array $files
+     * @param  array  $files
      * @return $this
      */
     public function files($files = [])
@@ -83,7 +83,7 @@ class MediaComponent extends BaseComponent
     /**
      * Set the stored files.
      *
-     * @param string $memeTypes
+     * @param  string  $memeTypes
      * @return $this
      */
     public function accept($memeTypes = '*/*')
@@ -120,7 +120,7 @@ class MediaComponent extends BaseComponent
     /**
      * Set the maximum files length.
      *
-     * @param int $max
+     * @param  int  $max
      * @return $this
      */
     public function max($max = 1)
@@ -133,7 +133,7 @@ class MediaComponent extends BaseComponent
     /**
      * Set the maximum files length.
      *
-     * @param null $collection
+     * @param  null  $collection
      * @return $this
      */
     public function collection($collection = null)
@@ -144,7 +144,7 @@ class MediaComponent extends BaseComponent
     }
 
     /**
-     * @param string $notes
+     * @param  string  $notes
      * @return $this
      */
     public function notes($notes = null)

@@ -45,8 +45,8 @@ class MediaController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \AhmedAliraqi\LaravelMediaUploader\Http\Requests\MediaRequest  $request
-     *
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     *
      * @throws \Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist
      * @throws \Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig
      */
