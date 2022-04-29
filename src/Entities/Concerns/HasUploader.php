@@ -31,23 +31,26 @@ trait HasUploader
             $query->where('collection', $collection);
         }
 
+        $mediaIds = [];
+
         $query->whereIn('token', $tokens)
-            ->each(function (TemporaryFile $file) {
+            ->each(function (TemporaryFile $file) use (&$mediaIds) {
                 foreach ($file->getMedia($file->collection) as $media) {
                     $media->forceFill([
                         'model_type' => $this->getMorphClass(),
                         'model_id' => $this->getKey(),
                     ])->save();
-
-                    if (Config::get('laravel-media-uploader.regenerate-after-assigning')) {
-                        Artisan::call('media-library:regenerate', [
-                            '--ids' => $media->id,
-                        ]);
-                    }
+                    $mediaIds[] = $media->id;
                 }
 
                 $file->delete();
             });
+
+        if (count($mediaIds) > 0 && Config::get('laravel-media-uploader.regenerate-after-assigning')) {
+            Artisan::call('media-library:regenerate', [
+                '--ids' => implode(',', $mediaIds),
+            ]);
+        }
 
         $collection = $collection ?: 'default';
 
