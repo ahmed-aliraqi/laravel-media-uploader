@@ -1,4 +1,8 @@
 # Release Notes for Laravel Media Uploader
+### v6.3.3
+* **Fixes**
+  - Run the artisan command once after saving the media instead of running in loop [22](https://github.com/ahmed-aliraqi/laravel-media-uploader/pull/22) by [AbdullahFaqeir](https://github.com/AbdullahFaqeir)
+  - Fix base64 validation issue [05fed33](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/05fed333a5b96196cc78b4fa4aa1e533aef4f1e9)
 ### v6.3.0
 * **Added**
   - Add Support for laravel 9.x [18](https://github.com/ahmed-aliraqi/laravel-media-uploader/pull/18) by [AbdullahFaqeir](https://github.com/AbdullahFaqeir)
