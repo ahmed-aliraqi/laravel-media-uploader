@@ -39,7 +39,7 @@ class MediaRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        if (! $value instanceof UploadedFile) {
+        if (! $value instanceof UploadedFile && ! $this->isBase64($value)) {
             return false;
         }
 
@@ -68,6 +68,10 @@ class MediaRule implements Rule
      */
     protected function getTypeString($value): string
     {
+        if ($this->isBase64($value)) {
+            return 'image';
+        }
+
         $fileFullPath = $value->getRealPath();
 
         if ((new Image())->canHandleMime($value->getMimeType())) {
@@ -78,10 +82,6 @@ class MediaRule implements Rule
             $type = strtolower(class_basename(get_class(
                 app('ffmpeg-driver')->open($fileFullPath)
             )));
-        }
-
-        if (is_string($value) && base64_decode(base64_encode($value)) === $value) {
-            $type = 'image';
         }
 
         return $type; // either: image, video or audio.
@@ -95,5 +95,16 @@ class MediaRule implements Rule
     protected function documentsMimeTypes()
     {
         return Config::get('laravel-media-uploader.documents_mime_types');
+    }
+
+    /**
+     * Determine whither the value is base64 image.
+     *
+     * @param $value
+     * @return bool
+     */
+    protected function isBase64($value)
+    {
+        return is_string($value) && base64_decode(base64_encode($value)) === $value;
     }
 }
