@@ -6,6 +6,8 @@ return [
      */
     'regenerate-after-assigning' => true,
 
+    'processing_media' => true,
+
     'documents_mime_types' => [
         'application/msword',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // .doc & .docx

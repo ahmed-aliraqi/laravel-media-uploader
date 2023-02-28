@@ -30,6 +30,10 @@ class ProcessUploadedMedia implements ShouldQueue
             return;
         }
 
+        if (! Config::get('laravel-media-uploader.processing_media')) {
+            return;
+        }
+
         if ($event->media->getCustomProperty('status') == 'processed') {
             // Skipped Processing Media File
             return;
