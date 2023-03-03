@@ -30,7 +30,7 @@ class ProcessUploadedMedia implements ShouldQueue
             return;
         }
 
-        if (! Config::get('laravel-media-uploader.processing_media')) {
+        if (! Config::get('laravel-media-uploader.processing_media', true)) {
             return;
         }
 
