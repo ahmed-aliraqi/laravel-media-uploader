@@ -7,17 +7,21 @@
         {
             "name": "Ahmed Fathy",
             "email": "aliraqi.dev@gmail.com"
+        },
+        {
+            "name": "Abdullah Al-Faqeir",
+            "email": "abdullah@devloops.net"
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "laravel/framework": "~5.7|~5.8|^6.0|^7.0|^8.0|^9.0",
-        "spatie/laravel-medialibrary": "^9.0|^10.0",
-        "php-ffmpeg/php-ffmpeg": "^1.0",
-        "laraeast/laravel-bootstrap-forms": "^5.0"
+        "php": "^8.1",
+        "laravel/framework": "^10.0|^11.0",
+        "spatie/laravel-medialibrary": "^11.0",
+        "php-ffmpeg/php-ffmpeg": "^1.2",
+        "laraeast/laravel-bootstrap-forms": "^5.2"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.0|~5.3|~6.0|~7.0",
+        "orchestra/testbench": "~8.0|~9.0",
         "mockery/mockery": "^1.4"
     },
     "autoload": {
