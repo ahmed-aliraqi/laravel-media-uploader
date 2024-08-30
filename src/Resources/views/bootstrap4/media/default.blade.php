@@ -1,5 +1,6 @@
 @php($files = is_array($files) ? json_encode($files) : $files)
 <file-uploader :media="{{ $files ?? '[]' }}"
+               {{ $name ? ':name="'.$name.'"' : '' }}
                {{ $max ? ':max="'.$max.'"' : '' }}
                {{ $form ? 'form="'.$form.'"' : '' }}
                {{ $unlimited ? ':unlimited="true"' : '' }}
