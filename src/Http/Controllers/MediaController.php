@@ -86,7 +86,7 @@ class MediaController extends Controller
     }
 
     /**
-     * @param $media
+     * @param  $media
      * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($media)

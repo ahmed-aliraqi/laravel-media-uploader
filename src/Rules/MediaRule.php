@@ -23,7 +23,7 @@ class MediaRule implements Rule
     /**
      * Create a new rule instance.
      *
-     * @param $types
+     * @param  $types
      */
     public function __construct(...$types)
     {
@@ -100,7 +100,7 @@ class MediaRule implements Rule
     /**
      * Determine whither the value is base64 image.
      *
-     * @param $value
+     * @param  $value
      * @return bool
      */
     protected function isBase64($value)
