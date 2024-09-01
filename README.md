@@ -187,44 +187,6 @@ Vue.use(FileUploader);
 |max-width| optional - default: `1200`|string|The maximum width of uploaded image|
 |max-height| optional - default: `1200`|string|The maximum height of uploaded image|
 
-#### Using with BsForm
-> This uploader support [laravel-bootstrap-forms](https://github.com/laraeast/laravel-bootstrap-forms) you can use the `image` custom component instead of vue html tag:
-
-```blade
-{{ BsForm::image('avatar')->collection('avatars')->files($user->getMediaResource('avatars')) }}
-{{ BsForm::audio('audio')->collection('audios')->files($user->getMediaResource('audios')) }}
-{{ BsForm::video('video')->collection('videos')->files($user->getMediaResource('videos')) }}
-{{ BsForm::media('media')->collection('videos')->accept('video/*')->files($user->getMediaResource('videos')) }}
-```
-```blade
-{{ BsForm::image('avatar')->max(3)->collection('avatars')->files($user->getMediaResource('avatars')) }}
-```
-```blade
-{{ BsForm::image('avatar')
-    ->max(3)
-    ->collection('avatars')
-    ->maxWidth(500)
-    ->maxHeight(500)
-    ->files($user->getMediaResource('avatars')) }}
-```
-```blade
-{{ BsForm::image('image')->unlimited()->files($user->getMediaResource()) }}
-```
-```blade
-{{ BsForm::image('avatar')->collection('avatars') }}
-```
-
-> Note: do not forget to add Cron job in your server to remove the expired temporary media.
-
-```
-* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
-```
-> **Note:**
-> Do not forget to store the `csrf` token in an HTML `meta` tag:
-```blade
-<meta name="csrf-token" content="{{ csrf_token() }}">
-```
-
 #### API
 * Upload Files
     * endpoint: /api/uploader/media/upload

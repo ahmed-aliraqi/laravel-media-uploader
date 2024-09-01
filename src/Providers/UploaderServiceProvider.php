@@ -3,10 +3,6 @@
 namespace AhmedAliraqi\LaravelMediaUploader\Providers;
 
 use AhmedAliraqi\LaravelMediaUploader\Console\TemporaryClearCommand;
-use AhmedAliraqi\LaravelMediaUploader\Forms\Components\AudioComponent;
-use AhmedAliraqi\LaravelMediaUploader\Forms\Components\ImageComponent;
-use AhmedAliraqi\LaravelMediaUploader\Forms\Components\MediaComponent;
-use AhmedAliraqi\LaravelMediaUploader\Forms\Components\VideoComponent;
 use AhmedAliraqi\LaravelMediaUploader\Support\FFmpegDriver;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\ServiceProvider;
@@ -45,11 +41,6 @@ class UploaderServiceProvider extends ServiceProvider
                 $schedule->command('temporary:clean')->everySixHours();
             });
         }
-
-        BsForm::registerComponent('image', ImageComponent::class);
-        BsForm::registerComponent('audio', AudioComponent::class);
-        BsForm::registerComponent('video', VideoComponent::class);
-        BsForm::registerComponent('media', MediaComponent::class);
     }
 
     /**
