@@ -1,4 +1,7 @@
 # Release Notes for Laravel Media Uploader
+### v8.0.0
+* **Fixes**
+  - Remove support for BsForm package [2d17c04](https://github.com/ahmed-aliraqi/laravel-media-uploader/commit/2d17c04831f52838a7c1bc9157e57940030f81a8)
 ### v6.3.3
 * **Fixes**
   - Run the artisan command once after saving the media instead of running in loop [22](https://github.com/ahmed-aliraqi/laravel-media-uploader/pull/22) by [AbdullahFaqeir](https://github.com/AbdullahFaqeir)
