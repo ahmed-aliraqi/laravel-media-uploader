@@ -22,8 +22,6 @@ class UploaderServiceProvider extends ServiceProvider
 
         $this->registerConfig();
 
-        $this->registerViews();
-
         $this->registerTranslations();
 
         $this->publishes([
@@ -71,20 +69,6 @@ class UploaderServiceProvider extends ServiceProvider
             __DIR__.'/../Config/laravel-media-uploader.php',
             'laravel-media-uploader'
         );
-    }
-
-    /**
-     * Register views.
-     *
-     * @return void
-     */
-    public function registerViews()
-    {
-        $this->publishes([
-            __DIR__.'/../Resources/views' => resource_path('views/vendor/uploader'),
-        ], 'uploader:views');
-
-        $this->loadViewsFrom(__DIR__.'/../Resources/views', 'uploader');
     }
 
     /**
