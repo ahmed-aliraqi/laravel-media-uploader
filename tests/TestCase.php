@@ -4,19 +4,15 @@ namespace AhmedAliraqi\LaravelMediaUploader\Tests;
 
 use AhmedAliraqi\LaravelMediaUploader\Providers\UploaderServiceProvider;
 use Illuminate\Console\Application;
-use Laraeast\LaravelBootstrapForms\Providers\BootstrapFormsServiceProvider;
-use Laraeast\LaravelLocales\Providers\LocalesServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Spatie\MediaLibrary\Conversions\Commands\RegenerateCommand;
 
 class TestCase extends OrchestraTestCase
 {
     /**
-     * Setup the test environment.
-     *
-     * @return void
+     * Set up the test environment.
      */
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -41,8 +37,6 @@ class TestCase extends OrchestraTestCase
     {
         return [
             UploaderServiceProvider::class,
-            BootstrapFormsServiceProvider::class,
-            LocalesServiceProvider::class,
         ];
     }
 

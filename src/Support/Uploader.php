@@ -9,9 +9,6 @@ class Uploader
 {
     /**
      * Get the formatted name of the given file.
-     *
-     * @param  \Illuminate\Http\UploadedFile  $file
-     * @return string
      */
     public static function formatName(UploadedFile $file): string
     {
@@ -26,9 +23,6 @@ class Uploader
 
     /**
      * Convert arabic & persian decimal to valid decimal.
-     *
-     * @param  string  $string
-     * @return string
      */
     public static function replaceNumbers(string $string): string
     {

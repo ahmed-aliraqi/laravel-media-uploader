@@ -51,7 +51,7 @@ class UploaderServiceProvider extends ServiceProvider
         $this->app->register(EventServiceProvider::class);
 
         $this->app->singleton('ffmpeg-driver', function () {
-            return (new FFmpegDriver())->driver();
+            return (new FFmpegDriver)->driver();
         });
     }
 

@@ -9,7 +9,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Blog extends Model implements HasMedia
 {
-    use InteractsWithMedia, HasUploader;
+    use HasUploader, InteractsWithMedia;
 
     /**
      * The table associated with the model.
@@ -20,8 +20,6 @@ class Blog extends Model implements HasMedia
 
     /**
      * Define the media collections.
-     *
-     * @return void
      */
     public function registerMediaCollections(): void
     {

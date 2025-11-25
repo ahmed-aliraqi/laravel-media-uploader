@@ -117,9 +117,6 @@ class MediaResource extends JsonResource
         return 'https://cdn.jsdelivr.net/npm/laravel-file-uploader/dist/img/attach.png';
     }
 
-    /**
-     * @return array
-     */
     protected function mediaDetails(): array
     {
         $duration = (float) $this->getCustomProperty('duration');

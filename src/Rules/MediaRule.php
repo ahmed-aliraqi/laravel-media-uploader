@@ -22,8 +22,6 @@ class MediaRule implements Rule
 
     /**
      * Create a new rule instance.
-     *
-     * @param  $types
      */
     public function __construct(...$types)
     {
@@ -64,7 +62,6 @@ class MediaRule implements Rule
 
     /**
      * @param  UploadedFile|mixed  $value
-     * @return string
      */
     protected function getTypeString($value): string
     {
@@ -74,7 +71,7 @@ class MediaRule implements Rule
 
         $fileFullPath = $value->getRealPath();
 
-        if ((new Image())->canHandleMime($value->getMimeType())) {
+        if ((new Image)->canHandleMime($value->getMimeType())) {
             $type = 'image';
         } elseif (in_array($value->getMimeType(), $this->documentsMimeTypes())) {
             $type = 'document';
@@ -100,7 +97,6 @@ class MediaRule implements Rule
     /**
      * Determine whither the value is base64 image.
      *
-     * @param  $value
      * @return bool
      */
     protected function isBase64($value)

@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 class UploaderUnitTest extends TestCase
 {
-    public function testGetMediaResource()
+    public function test_get_media_resource()
     {
         Storage::fake('public');
 
@@ -28,7 +28,7 @@ class UploaderUnitTest extends TestCase
         $this->assertInstanceOf(Collection::class, $blog->getMediaResource());
     }
 
-    public function testAddAllMediaFromToken()
+    public function test_add_all_media_from_token()
     {
         Storage::fake('public');
 
